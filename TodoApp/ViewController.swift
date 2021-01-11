@@ -16,6 +16,13 @@ class ViewController: UIViewController {
         
         print("Hell Git!")
     }
+    
+    // Add Sample Data TodoList (VC)
+    // Add TableView (Storyboard)
+    // Display Data in TableView (VC)
+    // Select data in a row
+    // Delete a row
+    // Add a row
 
 
 }
