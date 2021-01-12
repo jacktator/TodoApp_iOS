@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // Add Sample Data TodoList (VC)
+    @IBOutlet weak var todoTableView: UITableView!
+    
     let todoArray = [
         "Breakfast",
         "Coffee",
@@ -23,8 +24,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         print("Hello TODO \(todoArray)")
+        
+//        todoTableView.dataSource=self
+//        todoTableView.delegate=self
     }
-
-
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath)
+        return cell;
+    }
+}
