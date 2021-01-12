@@ -4,6 +4,6 @@ A demo app for ScrollView and TableView
 - [x] Add Sample Data TodoList (VC)
 - [x] Add TableView (Storyboard)
 - [ x] Display Data in TableView (VC)
-- [ ] Select data in a row
-- [ ] Delete a row
+- [ x] Select data in a row
+- [ x] Delete a row
 - [ ] Add a row

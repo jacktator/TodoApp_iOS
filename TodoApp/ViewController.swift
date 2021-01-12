@@ -67,7 +67,8 @@ extension ViewController: UITableViewDelegate {
         let todo = todoArray[index];
         
         todoArray.remove(at: index)
-        tableView.reloadData()
+//        tableView.reloadData()
+        tableView.deleteRows(at: [indexPath], with: .fade)
         
 //        print("Selected row: \(cell?.detailTextLabel?.text)")
 //        print("Selected todo: \(todo)")
