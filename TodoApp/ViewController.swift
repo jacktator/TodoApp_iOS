@@ -9,15 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // Add Sample Data TodoList (VC)
+    let todoArray = [
+        "Breakfast",
+        "Coffee",
+        "git pull",
+        "Code"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        print("Hell Git!")
+        print("Hello TODO \(todoArray)")
     }
     
-    // Add Sample Data TodoList (VC)
     // Add TableView (Storyboard)
     // Display Data in TableView (VC)
     // Select data in a row
