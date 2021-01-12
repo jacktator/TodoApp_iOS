@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var todoTableView: UITableView!
     
-    let todoArray: [Todo] = [
+    var todoArray: [Todo] = [
         Todo(time: 6, value: "Breakfast"),
         Todo(time: 7, value: "Coffee"),
         Todo(time: 8, value: "git pull"),
@@ -53,5 +53,24 @@ extension ViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = todo.value
         
         return cell;
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    // When cell selected, delete that todo
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Retrieve cell from Prototype Cell
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        // Retrieve index and correcponding todo
+        let index = indexPath.row
+        let todo = todoArray[index];
+        
+        todoArray.remove(at: index)
+        tableView.reloadData()
+        
+//        print("Selected row: \(cell?.detailTextLabel?.text)")
+//        print("Selected todo: \(todo)")
+        print("After deletion: \(todoArray)")
     }
 }
