@@ -24,12 +24,6 @@ class ViewController: UIViewController {
         
         print("Hello TODO \(todoArray)")
     }
-    
-    // Add TableView (Storyboard)
-    // Display Data in TableView (VC)
-    // Select data in a row
-    // Delete a row
-    // Add a row
 
 
 }
