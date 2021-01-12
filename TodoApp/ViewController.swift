@@ -8,15 +8,20 @@
 
 import UIKit
 
+struct Todo {
+    let time: Int;
+    let value: String;
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var todoTableView: UITableView!
     
-    let todoArray = [
-        "Breakfast",
-        "Coffee",
-        "git pull",
-        "Code"
+    let todoArray: [Todo] = [
+        Todo(time: 6, value: "Breakfast"),
+        Todo(time: 7, value: "Coffee"),
+        Todo(time: 8, value: "git pull"),
+        Todo(time: 9, value: "Code")
     ]
     
     override func viewDidLoad() {
@@ -44,8 +49,8 @@ extension ViewController: UITableViewDataSource {
         let todo = todoArray[index];
         
         // Assign text to UI
-        cell.textLabel?.text = "7am"
-        cell.detailTextLabel?.text = todo
+        cell.textLabel?.text = "\(todo.time) am"
+        cell.detailTextLabel?.text = todo.value
         
         return cell;
     }
