@@ -32,11 +32,21 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5;
+        return todoArray.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Retrieve cell from Prototype Cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath)
+        
+        // Retrieve index and correcponding todo
+        let index = indexPath.row
+        let todo = todoArray[index];
+        
+        // Assign text to UI
+        cell.textLabel?.text = "7am"
+        cell.detailTextLabel?.text = todo
+        
         return cell;
     }
 }
